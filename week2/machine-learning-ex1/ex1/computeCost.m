@@ -18,7 +18,17 @@ J = 0;
 h_x_theta = X*theta
 
 
-J = (1/(2*m))*sum(power((h_x_theta - y),2));
+
+m = length(y)
+
+
+h = X * theta
+temp = theta - y
+temp = temp .* temp
+temp = sum(temp)
+
+J = (1/(2*m)) * temp
+
 
 
 % =========================================================================
