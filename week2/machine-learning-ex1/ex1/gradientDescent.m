@@ -13,10 +13,7 @@ for iter = 1:num_iters
 
     error = (X * theta) - y;
     constant_value = ( alpha /m );
-    temp_theta_1 = theta(1) - constant_value * sum(error.* X(:,1));
-    temp_theta_2 = theta(2) - constant_value * sum(error.* X(:,2));
-    theta = [temp_theta_1; temp_theta_2];
-
+    theta = theta - constant_value * sum(error.* X);
 
     fprintf('Theta in these Iteration \n');
     fprintf('%f\n', theta);
